@@ -35,8 +35,11 @@ class ContentModel: ObservableObject {
     
     init() {
         
+        // Parse local included json data
         getLocalData()
         
+        // Download remote json file and parse data
+        getRemoteData()
     }
     
     // MARK: - Data methods
@@ -76,6 +79,53 @@ class ContentModel: ObservableObject {
             // Log error
             print("Couldn't parse style data")
         }
+        
+    }
+    
+    func getRemoteData() {
+        
+        // String path
+        let urlString = "https://codewithchris.github.io/learningapp-data/data2.json"
+        
+        // Create a url object
+        let url = URL(string: urlString)
+        
+        guard url != nil else {
+            // Couldn't create url
+            return
+        }
+        
+        // Create a URLRequest object
+        let request = URLRequest(url: url!)
+        
+        // Get the session and kick off the task
+        let session = URLSession.shared
+        
+        let dataTask = session.dataTask(with: request) { (data, response, error) in
+            
+            // Check if there's an error
+            guard error == nil else {
+                // There was an error
+                return
+            }
+            
+            do {
+                // Create json decoder
+                let decoder = JSONDecoder()
+            
+                // Decode
+                let modules = try decoder.decode([Module].self, from: data!)
+                
+                // Append parsed modules into modules property
+                self.modules += modules
+            }
+            catch {
+                // Couldn't parse json
+            }
+        }
+        
+        // Kick off data task
+        dataTask.resume()
         
     }
     
@@ -152,6 +202,26 @@ class ContentModel: ObservableObject {
             // Set the question content
             codeText = addStyling(currentQuestion!.content)
         }
+    }
+    
+    func nextQuestion() {
+        
+        // Advance the question index
+        currentQuestionIndex += 1
+        
+        // Check that it's within the range of questions
+        if currentQuestionIndex < currentModule!.test.questions.count {
+            
+            // Set the current question
+            currentQuestion = currentModule!.test.questions[currentQuestionIndex]
+            codeText = addStyling(currentQuestion!.content)
+        }
+        else {
+            // If not, then reset the properties
+            currentQuestionIndex = 0
+            currentQuestion = nil
+        }
+        
     }
     
     // MARK: - Code Styling

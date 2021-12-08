@@ -24,6 +24,7 @@
 		C840AD182760FB2F005B0BCD /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C840AD172760FB2F005B0BCD /* CodeTextView.swift */; };
 		C840AD1B2760FB4F005B0BCD /* RectangleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C840AD1A2760FB4F005B0BCD /* RectangleCard.swift */; };
 		C840AD1F2760FD70005B0BCD /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C840AD1E2760FD70005B0BCD /* AVKit.framework */; };
+		C840AD2227610033005B0BCD /* TestResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C840AD2127610033005B0BCD /* TestResultView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		C840AD172760FB2F005B0BCD /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
 		C840AD1A2760FB4F005B0BCD /* RectangleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleCard.swift; sourceTree = "<group>"; };
 		C840AD1E2760FD70005B0BCD /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		C840AD2127610033005B0BCD /* TestResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				C840AD142760FB0C005B0BCD /* TestView.swift */,
 				C840AD172760FB2F005B0BCD /* CodeTextView.swift */,
 				C840AD1A2760FB4F005B0BCD /* RectangleCard.swift */,
+				C840AD2127610033005B0BCD /* TestResultView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83CAF21F25F03C8D00EC180E /* HomeView.swift in Sources */,
+				C840AD2227610033005B0BCD /* TestResultView.swift in Sources */,
 				83CAF21D25F03C8D00EC180E /* LearningApp.swift in Sources */,
 				C840AD072757CF3D005B0BCD /* ContentView.swift in Sources */,
 				C840AD0E275913C1005B0BCD /* ContentDetailView.swift in Sources */,
